@@ -13,6 +13,11 @@ class Main{
 		System.out.println("enter a '1'. To view the log book, enter a '2'");
 		userChoice = stdin.nextInt();
 		
-		System.out.println(userChoice);
+		if (userChoice == 1){
+			System.out.println("You chose 1.");
+		}
+		else if (userChoice == 2){
+			System.out.println("You chose 2.");
+		}		
 	}
 }
