@@ -17,7 +17,19 @@ class Main{
 			System.out.println("You chose 1.");
 		}
 		else if (userChoice == 2){
-			System.out.println("You chose 2.");
+			try{
+			FileReader fr = new FileReader("medtrack/medicinelog.txt");
+			BufferedReader br = new BufferedReader(fr);
+			
+			String str;
+			while((str = br.readLine()) != null){
+				System.out.println(str + "\n");
+			}
+			br.close();
+		}
+		catch(IOException e){
+			System.out.println("File not found.");
+		}
 		}		
 	}
 }
