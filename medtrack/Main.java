@@ -14,7 +14,17 @@ class Main{
 		userChoice = stdin.nextInt();
 		
 		if (userChoice == 1){
-			System.out.println("You chose 1.");
+			try{
+			FileWriter fw = new FileWriter("medtrack/medicinelog.txt", true);
+			PrintWriter pw = new PrintWriter(fw);
+			
+			pw.println("My\n");
+			
+			pw.close();
+			}
+			catch(IOException e){
+				System.out.println("Error!");
+			}
 		}
 		else if (userChoice == 2){
 			try{
@@ -26,10 +36,10 @@ class Main{
 				System.out.println(str + "\n");
 			}
 			br.close();
-		}
-		catch(IOException e){
-			System.out.println("File not found.");
-		}
+			}
+			catch(IOException e){
+				System.out.println("File not found.");
+			}
 		}		
 	}
 }
