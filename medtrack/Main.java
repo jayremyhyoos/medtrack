@@ -3,11 +3,16 @@ package medtrack;
 import java.util.Scanner;
 import java.io.*;
 import java.lang.System.*;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 class Main{
 	public static void main(String[] args){
 		Scanner stdin = new Scanner(System.in);
 		int userChoice;
+		Date today = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		String date = dateFormat.format(today);
 		
 		System.out.println("To confirm that you've taken your daily prescription, ");
 		System.out.println("enter a '1'. To view the log book, enter a '2'");
@@ -18,7 +23,7 @@ class Main{
 			FileWriter fw = new FileWriter("medtrack/medicinelog.txt", true);
 			PrintWriter pw = new PrintWriter(fw);
 			
-			pw.println("My\n");
+			pw.println(date + " ---------------------------------------------------------------------------------------- Taken\n");
 			
 			pw.close();
 			}
